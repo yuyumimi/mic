@@ -1,0 +1,17 @@
+version: '3.7'
+services:
+  siorrrbei-gateway01:
+    restart: always
+    image: sior/siorrrbei-gateway
+    container_name: siorrrbei-gateway01
+    environment:
+      - TZ=Asia/Shanghai
+      - spring.cloud.nacos.discovery.port=10000
+    env_file:
+      - ../.env
+    ports:
+      - 10000:10000
+    volumes:
+      - /opt/logs/siorrrbei-gateway01:/opt/logs
+      - /etc/localtime:/etc/localtime:ro
+      - /usr/share/zoneinfo:/usr/share/zoneinfo:ro

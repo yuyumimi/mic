@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.mic</groupId>
+    <artifactId>mic-dependencies-pom</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0.0-SNAPSHOT</version>
+    <name>mic-dependencies-pom</name>
+    <description>All Dependencies</description>
+
+    <properties>
+        <java.version>1.8</java.version>
+        <java.source.version>1.8</java.source.version>
+        <java.target.version>1.8</java.target.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <spring-boot.version>2.2.2.RELEASE</spring-boot.version>
+
+        <dubbo.version>2.7.3</dubbo.version>
+        <spring-cloud.version>Hoxton.SR1</spring-cloud.version>
+        <spring-cloud-alibaba.version>2.1.1.RELEASE
+        </spring-cloud-alibaba.version>
+        <fastjson.version>1.2.61</fastjson.version>
+
+        <oracle-ojdbc.version>12.1.0.2</oracle-ojdbc.version>
+        <mysql-connector.version>8.0.18</mysql-connector.version>
+        <spring-boot-tk-mybatis.version>2.1.5</spring-boot-tk-mybatis.version>
+        <mybatis-spring-boot-starter.version>2.0.1
+        </mybatis-spring-boot-starter.version>
+        <spring-boot-pagehelper.version>1.2.12</spring-boot-pagehelper.version>
+        <spring-boot-alibaba-druid.version>1.1.10
+        </spring-boot-alibaba-druid.version>
+
+
+        <logstash-logback.version>6.1</logstash-logback.version>
+        <javax-servlet.version>3.1.0</javax-servlet.version>
+
+        <swagger-boot-starter.version>1.9.0.RELEASE
+        </swagger-boot-starter.version>
+        <swagger2.version>2.9.2</swagger2.version>
+
+        <jjwt.version>0.9.1</jjwt.version>
+        <org.mapstruct.version>1.3.1.Final</org.mapstruct.version>
+        <commons.collections4.version>4.4</commons.collections4.version>
+        <commons-io.version>2.6</commons-io.version>
+        <spymemcached.version>2.12.2</spymemcached.version>
+        <xmemcached.version>2.4.6</xmemcached.version>
+        <jetcache-starter-redis-lettuce.version>2.6.0.M3
+        </jetcache-starter-redis-lettuce.version>
+
+        <!--插件版本-->
+
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <!--外部依赖管理-->
+            <!-- Spring Boot -->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${spring-boot.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <!-- Apache Dubbo  -->
+            <dependency>
+                <groupId>org.apache.dubbo</groupId>
+                <artifactId>dubbo-dependencies-bom</artifactId>
+                <version>${dubbo.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.dubbo</groupId>
+                <artifactId>dubbo</artifactId>
+                <version>${dubbo.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>org.springframework</groupId>
+                        <artifactId>spring</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>javax.servlet</groupId>
+                        <artifactId>servlet-api</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>log4j</groupId>
+                        <artifactId>log4j</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring-cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+                <version>${spring-cloud-alibaba.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <!--web-->
+            <dependency>
+                <groupId>org.apache.dubbo</groupId>
+                <artifactId>dubbo-serialization-kryo</artifactId>
+                <version>${dubbo.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>javax.servlet</groupId>
+                <artifactId>javax.servlet-api</artifactId>
+                <version>${javax-servlet.version}</version>
+                <scope>provided</scope>
+            </dependency>
+            <!--第三方工具类-->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>${fastjson.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.jsonwebtoken</groupId>
+                <artifactId>jjwt</artifactId>
+                <version>${jjwt.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.mapstruct</groupId>
+                <artifactId>mapstruct</artifactId>
+                <version>${org.mapstruct.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.mapstruct</groupId>
+                <artifactId>mapstruct-processor</artifactId>
+                <version>${org.mapstruct.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-collections4</artifactId>
+                <version>${commons.collections4.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>commons-io</groupId>
+                <artifactId>commons-io</artifactId>
+                <version>${commons-io.version}</version>
+            </dependency>
+            <!--引入memcached-->
+            <dependency>
+                <groupId>com.googlecode.xmemcached</groupId>
+                <artifactId>xmemcached</artifactId>
+                <version>${xmemcached.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.alicp.jetcache</groupId>
+                <artifactId>jetcache-starter-redis-lettuce</artifactId>
+                <version>${jetcache-starter-redis-lettuce.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>axis</groupId>
+                <artifactId>axis</artifactId>
+                <version>1.4</version>
+            </dependency>
+            <!--mybatis依赖-->
+            <dependency>
+                <groupId>tk.mybatis</groupId>
+                <artifactId>mapper-spring-boot-starter</artifactId>
+                <version>${spring-boot-tk-mybatis.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.mybatis.spring.boot</groupId>
+                <artifactId>mybatis-spring-boot-starter</artifactId>
+                <version>${mybatis-spring-boot-starter.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.github.pagehelper</groupId>
+                <artifactId>pagehelper-spring-boot-starter</artifactId>
+                <version>${spring-boot-pagehelper.version}</version>
+            </dependency>
+
+            <!--日志依赖-->
+            <dependency>
+                <groupId>net.logstash.logback</groupId>
+                <artifactId>logstash-logback-encoder</artifactId>
+                <version>${logstash-logback.version}</version>
+            </dependency>
+
+            <!--数据库驱动依赖-->
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>${mysql-connector.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.oracle</groupId>
+                <artifactId>ojdbc7</artifactId>
+                <version>${oracle-ojdbc.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>druid-spring-boot-starter</artifactId>
+                <version>${spring-boot-alibaba-druid.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger2</artifactId>
+                <version>${swagger2.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger-ui</artifactId>
+                <version>${swagger2.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.spring4all</groupId>
+                <artifactId>swagger-spring-boot-starter</artifactId>
+                <version>${swagger-boot-starter.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.mic</groupId>
+                <artifactId>mic-common-core</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.mic</groupId>
+                <artifactId>mic-common-mysql</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.mic</groupId>
+                <artifactId>mic-common-mybatis</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+</project>

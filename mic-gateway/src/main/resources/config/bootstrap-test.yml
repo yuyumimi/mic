@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: siorrrbei-gateway
+  cloud:
+    nacos:
+      config:
+        server-addr: 172.20.106.131:8848
+        file-extension: yml

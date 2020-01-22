@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.mic</groupId>
+    <artifactId>mic-parent</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0.0-SNAPSHOT</version>
+	<name>微系统</name>
+	<description>微系统</description>
+
+    <!--声明版本变量-->
+    <properties>
+        <java.version>1.8</java.version>
+        <java.source.version>1.8</java.source.version>
+        <java.target.version>1.8</java.target.version>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <docker.image.repostory>sior</docker.image.repostory> <!--镜像前缀，随便取-->
+        <maven-compiler-plugin.version>3.7.0</maven-compiler-plugin.version>
+        <maven-surefire-plugin.version>2.21.0</maven-surefire-plugin.version>
+    </properties>
+
+    <modules>
+        <module>mic-dependencies-pom</module>
+        <module>mic-common</module>
+        <module>mic-gateway</module>
+        <module>mic-user</module>
+    </modules>
+
+    <organization>
+        <name>The yuyu</name>
+        <url>http://yuyu</url>
+    </organization>
+
+    <scm>
+        <url>https://github.com/apache/dubbo-spring-boot-project</url>
+        <connection>scm:git:git:////github.com/apache/dubbo-spring-boot-project.git</connection>
+        <developerConnection>scm:git:ssh://git@//github.com/apache/dubbo-spring-boot-project.git</developerConnection>
+    </scm>
+
+    <issueManagement>
+
+    </issueManagement>
+
+    <mailingLists>
+
+    </mailingLists>
+    <developers>
+        <developer>
+            <id>yuyu</id>
+            <name>yuyu</name>
+            <email>yuyu@yuyu</email>
+            <url>http://yuyu</url>
+        </developer>
+    </developers>
+
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.mic</groupId>
+                <artifactId>mic-dependencies-pom</artifactId>
+                <version>${project.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <profiles>
+
+    </profiles>
+
+    <build>
+        <pluginManagement>
+            <plugins>
+
+            </plugins>
+        </pluginManagement>
+
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${maven-compiler-plugin.version}</version>
+                <configuration>
+                    <source>${maven.compiler.source}</source>
+                    <target>${maven.compiler.target}</target>
+                    <encoding>${project.build.sourceEncoding}</encoding>
+                </configuration>
+            </plugin>
+            <!-- 跳过单元测试 -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>${maven-surefire-plugin.version}</version>
+                <configuration>
+                    <skipTests>true</skipTests>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>
