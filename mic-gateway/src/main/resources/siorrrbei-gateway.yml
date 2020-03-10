@@ -1,0 +1,52 @@
+server:
+  port: 10000
+base:
+  nacos:
+    hostname: localhost
+    port: 8848
+spring:
+  application:
+    name: siorrrbei-gateway
+  cloud:
+    nacos:
+      discovery:
+        server-addr: ${base.nacos.hostname}:${base.nacos.port}
+    gateway:
+      routes:
+        - id: siorrrbei-report-search
+          uri: lb://siorrrbei-report-search
+          predicates:
+            - Path=/report-search/**
+        - id: siorrrbei-rsjcas
+          uri: lb://siorrrbei-rsjcas
+          predicates:
+            - Path=/rsjcas/**
+          filters:
+            - StripPrefix=1
+        - id: siorrrbei-user
+          uri: lb://siorrrbei-user
+          predicates:
+            - Path=/user/**
+        - id: siorrrbei-info-change
+          uri: lb://siorrrbei-info-change
+          predicates:
+            - Path=/info-change/**
+        - id: siorrrbei-newinsurance
+          uri: lb://siorrrbei-newinsurance
+          predicates:
+            - Path=/newinsur/**
+logging:
+  level:
+    cn.com.capinfo: debug
+gateway:
+  ignore:
+    authentication:
+      uri: /rsjcas/**
+siorrrbei:
+  running-date:
+    enable: false
+    ignore-url:
+    start-day: 5
+    end-day: 24
+    start-hour: 6
+    end-hour: 24
