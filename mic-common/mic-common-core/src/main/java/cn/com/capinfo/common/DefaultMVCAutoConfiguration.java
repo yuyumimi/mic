@@ -1,13 +1,9 @@
 package cn.com.capinfo.common;
 
-import cn.com.capinfo.common.exception.DefaultGlobalExceptionHandlerAdvice;
 import com.alibaba.fastjson.serializer.SerializerFeature;
 import com.alibaba.fastjson.support.config.FastJsonConfig;
 import com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingClass;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnWebApplication;
+import org.springframework.boot.autoconfigure.condition.*;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.MediaType;
@@ -36,6 +32,7 @@ import java.util.List;
         true)
 public class DefaultMVCAutoConfiguration implements WebMvcConfigurer {
     @Bean
+    @ConditionalOnMissingBean(BCryptPasswordEncoder.class)
     public PasswordEncoder passwordEncoder()	{
         return new BCryptPasswordEncoder();
     }

@@ -1,11 +1,9 @@
-
 spring:
   datasource:
     url: jdbc:mysql://172.20.63.49:3306/user-center?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&useSSL=false&zeroDateTimeBehavior=convertToNull
     username: root
     password: yuyang
     driver-class-name: com.mysql.cj.jdbc.Driver
-
 mybatis:
   mapper-locations: classpath:mapper/*.xml
 mapper:
@@ -18,3 +16,6 @@ pagehelper:
   reasonable: true
   page-size-zero: true
   support-methods-arguments: true
+siorrrbei:
+  fastjson:
+    enabled: false

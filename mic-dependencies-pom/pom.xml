@@ -38,9 +38,8 @@
         <logstash-logback.version>6.1</logstash-logback.version>
         <javax-servlet.version>3.1.0</javax-servlet.version>
 
-        <swagger-boot-starter.version>1.9.0.RELEASE
-        </swagger-boot-starter.version>
-        <swagger2.version>2.9.2</swagger2.version>
+        <knife4j-spring-boot.version>2.0.1</knife4j-spring-boot.version>
+
 
         <jjwt.version>0.9.1</jjwt.version>
         <org.mapstruct.version>1.3.1.Final</org.mapstruct.version>
@@ -207,21 +206,10 @@
                 <artifactId>druid-spring-boot-starter</artifactId>
                 <version>${spring-boot-alibaba-druid.version}</version>
             </dependency>
-
             <dependency>
-                <groupId>io.springfox</groupId>
-                <artifactId>springfox-swagger2</artifactId>
-                <version>${swagger2.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>io.springfox</groupId>
-                <artifactId>springfox-swagger-ui</artifactId>
-                <version>${swagger2.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.spring4all</groupId>
-                <artifactId>swagger-spring-boot-starter</artifactId>
-                <version>${swagger-boot-starter.version}</version>
+                <groupId>com.github.xiaoymin</groupId>
+                <artifactId>knife4j-spring-boot-starter</artifactId>
+                <version>${knife4j-spring-boot.version}</version>
             </dependency>
 
             <dependency>

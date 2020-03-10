@@ -27,7 +27,7 @@ import java.time.LocalDateTime;
 
 /**
  * @ClassName MaintainDateGatewayFilter
- * @Description TODO
+ * @Description TODO 待开发接口级别拦截
  * @Author yuyu
  * @Date 2019/12/19 12:01
  * @Version 1.0

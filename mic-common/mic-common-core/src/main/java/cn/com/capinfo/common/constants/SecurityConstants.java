@@ -176,11 +176,11 @@ public interface SecurityConstants {
     public static final String[] SWAGGER_ENDPOINTS = {
 //            "/oauth/**",
 //            "/actuator/**",
-            "/v2/api-docs/**",
-            "/swagger/api-docs",
-            "/swagger-ui.html",
-            "/swagger-resources/**",
+//            "/v2/api-docs/**",
+//            "/swagger/api-docs",
+//            "/swagger-ui.html",
+//            "/swagger-resources/**",
             "/webjars/**",
-//            "/druid/**"
+            "doc.html"
     };
 }
