@@ -1,6 +1,10 @@
 server:
-  port: 8080
+  port: 8081
 spring:
   application:
     name: mic-user
-
+  cloud:
+    nacos:
+      config:
+        server-addr: localhost:8848
+        file-extension: yml

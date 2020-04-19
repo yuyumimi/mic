@@ -1,2 +1,2 @@
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-  cn.com.capinfo.common.DefaultMVCAutoConfiguration
+  com.mic.common.DefaultMVCAutoConfiguration

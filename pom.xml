@@ -30,6 +30,7 @@
         <module>mic-common</module>
         <module>mic-gateway</module>
         <module>mic-user</module>
+        <module>mic-oauth2</module>
     </modules>
 
     <organization>

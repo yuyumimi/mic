@@ -1,0 +1,41 @@
+server:
+  port: 10000
+base:
+  nacos:
+    hostname: localhost
+    port: 8848
+spring:
+  application:
+    name: mic-gateway
+  cloud:
+    nacos:
+      discovery:
+        server-addr: ${base.nacos.hostname}:${base.nacos.port}
+    gateway:
+      enabled: true   #开启注册中心路由功能
+      discovery:
+        locator:
+          lower-case-service-id: true  #lower-case-service-id: true
+          enabled: true
+      routes:
+        - id: siorrrbei-user
+          uri: lb://mic-user
+          predicates:
+            - Path=/user/**
+          filters:
+            - StripPrefix=1
+logging:
+  level:
+    cn.com.capinfo: debug
+gateway:
+  ignore:
+    authentication:
+      uri: /rsjcas/**
+siorrrbei:
+  running-date:
+    enable: false
+    ignore-url:
+    start-day: 5
+    end-day: 24
+    start-hour: 6
+    end-hour: 24

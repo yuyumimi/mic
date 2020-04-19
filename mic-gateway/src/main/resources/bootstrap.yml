@@ -1,11 +1,23 @@
 spring:
   application:
-    name: siorrrbei-gateway
+    name: mic-gateway
   cloud:
     nacos:
+      server-addr: localhost:8848
       config:
-        server-addr: localhost:8848
         file-extension: yml
+#        group: DEFAULT_GROUP
   profiles:
     active: dev
+  security:
+    user:
+      password: abc
 
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: always

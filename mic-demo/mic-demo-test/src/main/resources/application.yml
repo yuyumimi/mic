@@ -1,0 +1,33 @@
+server:
+  port: 9999
+spring:
+  application:
+    name: consul-demo
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+    sentinel:
+      datasource:
+        dsl:
+          nacos:  #nacos作为数据源，启动时候去nacos pull规则
+            server-addr: localhost:8848
+            dataId: demo-sentinel-service
+            groupId: DEFAULT_GROUP
+            data_type: json
+            rule-type: flow
+      transport: #dashboard地址
+        dashboard: localhost:8080
+        port: 8722  #默认端口，如果被占用则从8719依次+1扫描
+        client-ip: localhost
+#      eager: true
+#    inetutils:
+#      defaultIpAddress: 192.168.0.108
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+feign:
+  sentinel:
+    enabled: true

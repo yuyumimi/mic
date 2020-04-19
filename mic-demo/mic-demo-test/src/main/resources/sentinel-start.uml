@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>com.alibaba.csp.sentinel.transport.command.SimpleHttpCommandCenter</OriginalElement>
+  <nodes>
+    <node x="0.0" y="301.0">com.alibaba.csp.sentinel.transport.init.CommandCenterInitFunc</node>
+    <node x="196.0" y="375.0">com.alibaba.csp.sentinel.init.InitExecutor.OrderWrapper</node>
+    <node x="275.0" y="301.0">com.alibaba.csp.sentinel.command.CommandCenterProvider</node>
+    <node x="44.0" y="0.0">com.alibaba.csp.sentinel.transport.CommandCenter</node>
+    <node x="392.0" y="375.0">com.alibaba.csp.sentinel.SphU</node>
+    <node x="0.0" y="375.0">com.alibaba.csp.sentinel.init.InitExecutor</node>
+    <node x="0.0" y="449.0">com.alibaba.csp.sentinel.Env</node>
+    <node x="0.0" y="227.0">com.alibaba.cloud.sentinel.custom.SentinelAutoConfiguration</node>
+    <node x="0.0" y="79.0">com.alibaba.csp.sentinel.transport.command.SimpleHttpCommandCenter</node>
+    <node x="0.0" y="153.0">com.alibaba.csp.sentinel.adapter.spring.webmvc.AbstractSentinelInterceptor</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="com.alibaba.csp.sentinel.transport.command.SimpleHttpCommandCenter" target="com.alibaba.csp.sentinel.transport.CommandCenter">
+      <point x="0.0" y="-14.5" />
+      <point x="0.0" y="14.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="265.0" y="295.0" />
+  <SelectedNodes />
+  <Categories />
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

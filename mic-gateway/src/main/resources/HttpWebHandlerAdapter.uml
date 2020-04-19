@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>org.springframework.web.server.adapter.HttpWebHandlerAdapter</OriginalElement>
+  <nodes>
+    <node x="681.0" y="79.0">org.springframework.http.server.reactive.HttpHandler</node>
+    <node x="314.99999999999994" y="158.0">org.springframework.web.server.adapter.HttpWebHandlerAdapter</node>
+    <node x="0.0" y="79.0">org.springframework.web.server.handler.WebHandlerDecorator</node>
+    <node x="233.0" y="79.0">org.springframework.cloud.gateway.handler.FilteringWebHandler</node>
+    <node x="0.0" y="232.0">org.springframework.cloud.gateway.handler.RoutePredicateHandlerMapping</node>
+    <node x="466.0" y="79.0">org.springframework.web.reactive.DispatcherHandler</node>
+    <node x="272.5" y="0.0">org.springframework.web.server.WebHandler</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="org.springframework.web.server.handler.WebHandlerDecorator" target="org.springframework.web.server.WebHandler">
+      <point x="0.0" y="-14.5" />
+      <point x="106.5" y="54.0" />
+      <point x="294.8333333333333" y="54.0" />
+      <point x="-44.666666666666686" y="14.5" />
+    </edge>
+    <edge source="org.springframework.web.server.adapter.HttpWebHandlerAdapter" target="org.springframework.http.server.reactive.HttpHandler">
+      <point x="57.5" y="-14.5" />
+      <point x="487.49999999999994" y="133.0" />
+      <point x="752.0" y="133.0" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="org.springframework.web.server.adapter.HttpWebHandlerAdapter" target="org.springframework.web.server.handler.WebHandlerDecorator">
+      <point x="-57.5" y="-14.5" />
+      <point x="372.49999999999994" y="133.0" />
+      <point x="106.5" y="133.0" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="org.springframework.web.reactive.DispatcherHandler" target="org.springframework.web.server.WebHandler">
+      <point x="0.0" y="-14.5" />
+      <point x="563.5" y="54.0" />
+      <point x="384.16666666666663" y="54.0" />
+      <point x="44.66666666666663" y="14.5" />
+    </edge>
+    <edge source="org.springframework.cloud.gateway.handler.FilteringWebHandler" target="org.springframework.web.server.WebHandler">
+      <point x="0.0" y="-14.5" />
+      <point x="0.0" y="14.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="288.0" y="50.0" />
+  <SelectedNodes />
+  <Categories />
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

@@ -19,6 +19,9 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 import java.util.List;
 
+/**
+ *
+ */
 @Configuration
 @EnableSwagger2
 @EnableKnife4j
@@ -46,7 +49,7 @@ public class SwaggerConfiguration {
                 .paths(PathSelectors.any())
                 .build().globalOperationParameters(parameters)
                 .securityContexts(Lists.newArrayList(securityContext()))
-//                .securitySchemes(Lists.<SecurityScheme>newArrayList(apiKey()))
+                .securitySchemes(Lists.<SecurityScheme>newArrayList(apiKey()))
                 ;
         return docket;
     }

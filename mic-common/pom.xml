@@ -17,5 +17,10 @@
         <module>mic-common-logback</module>
         <module>mic-common-mysql</module>
         <module>mic-common-mybatis</module>
+        <module>mic-common-zookeeper</module>
+        <module>mic-common-consul</module>
+        <module>mic-common-zipkin</module>
+        <module>mic-common-sentinel</module>
+        <module>mic-common-redis</module>
     </modules>
 </project>

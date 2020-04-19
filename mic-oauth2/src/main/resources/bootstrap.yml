@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: siorrrbei-oauth2
+  cloud:
+    nacos:
+      config:
+        server-addr: sior-register:8848
+        # 配置文件后缀名为yaml
+        file-extension: yml
+#        group: DEFAULT_GROUP
+#        namespace: cd9df716-bbe1-44c1-9149-a8b4fe07f501
+  profiles:
+    active: dev

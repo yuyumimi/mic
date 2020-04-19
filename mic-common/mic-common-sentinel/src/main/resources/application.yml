@@ -1,0 +1,16 @@
+spring:
+  cloud:
+    sentinel:
+      transport: #dashboard地址
+        dashboard: localhost:8080
+        port: 8722  #默认端口，如果被占用则从8719依次+1扫描
+        client-ip: localhost
+#      eager: true      #当spring容器启动时启动一个netty客户端连接sentinel-dashbaod初始化心跳
+      datasource:
+        dsl:
+          nacos:  #nacos作为数据源，启动时候去nacos pull规则
+            server-addr: localhost:8848
+            dataId: cloudalibaba-sentinel-service
+            groupId: DEFAULT_GROUP
+            data_type: json
+            rule-type: flow

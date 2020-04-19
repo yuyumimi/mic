@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: mic-dubbo-provider
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+dubbo:
+  scan:
+    base-packages: com.mic.dubbo.provider.service
+  protocol:
+    name: dubbo
+    port: -1
+    serialization: kryo
+  registry:
+    address: spring-cloud://localhost
+  cloud:
+    subscribed-services: mic-dubbo-provider
+  application:
+    logger: slf4j
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
