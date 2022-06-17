@@ -24,7 +24,7 @@
 
         <spring-cloud.version>Hoxton.SR1</spring-cloud.version>
         <spring-cloud-alibaba.version>2.2.0.RELEASE</spring-cloud-alibaba.version>
-        <fastjson.version>1.2.68</fastjson.version>
+        <fastjson.version>1.2.83</fastjson.version>
         <hutool.version>5.2.3</hutool.version>
         <guava.version>28.2-jre</guava.version>
 
