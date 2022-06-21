@@ -29,7 +29,7 @@
         <guava.version>28.2-jre</guava.version>
 
         <oracle-ojdbc.version>12.1.0.2</oracle-ojdbc.version>
-        <mysql-connector.version>8.0.18</mysql-connector.version>
+        <mysql-connector.version>8.0.28</mysql-connector.version>
         <spring-boot-tk-mybatis.version>2.1.5</spring-boot-tk-mybatis.version>
         <mybatis-spring-boot-starter.version>2.0.1
         </mybatis-spring-boot-starter.version>
